@@ -42,35 +42,31 @@
     <!-- Page-specific (main) content here -->
     <header>
       <div>
-          <img src="/images/profile-hex.png"> 
+          <img src="/images/jimcramerclean.png"> 
       </div>
       <br>
       <div>
-          <h2 id="profile-name">Jimbo</h2>
+          <h2 id="profile-name">Jim <span class="normal">Cramer</span></h2>
       </div>
   </header>
 
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <label class="tweet-text">What are you humming about?</label>
+        <label class="tweet-text">Paper or Diamond Hands?</label>
+        
         <form action="/tweets/" method="POST">
-          <textarea name="text" id="tweet-text"></textarea>
+          <input name="text" id="tweet-text" placeholder="Input your tweet here"></textarea>
           <div>
-            <button type="submit">Tweet</button>
+            <button type="submit" class="tweet-button">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
 
-     <h1>Giveon </h1>
-     <h2>Like I want you</h2>
-     <p>Sometimes I wish you knew
-      but I disguise the truth.
-      I say I'm happy but I'm still stuck on us, mm-mm-mm.
-      Does your mind play this game too?
-      Think 'bout me and you.
-      I guess I'll just pretend until it all makes sense, hm-mm-hm, hmm-hmm.</p>
+     <h1>Stock Market News </h1>
+     <h2>You tweeted: </h2>
+     <p>Something must give in China.. something.... this is unsustainable. $BioNtex time!</p>
     </main>
   </body>
 </html>

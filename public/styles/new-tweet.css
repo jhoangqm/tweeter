@@ -20,15 +20,17 @@ button {
   color: #95918a;
 }
 
+
 #tweet-text {
   background: transparent;
   width: 100%;
   outline: 0 none;
   border-style: none;
-  border-bottom: 3px solid #545149;
+  border-bottom: 2px solid #545149;
   resize: none;
   font-size: 0.8em;
   font-weight: bold;
+  
 }
 
 .tweet-text{
@@ -47,4 +49,8 @@ button {
   color: #545149;
   border-top: 10px;
   float: right;
+}
+
+.tweet-button{
+  font-family: 'Bungee', sans-serif;
 }

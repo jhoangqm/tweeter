@@ -18,4 +18,14 @@ header h2 {
 
 #profile-name{
   color: black;
+  
 }
+
+.normal{
+  font-weight: 400;
+  
+}
+/* .small{
+  font-size: 10px;
+  color: black;
+} */
