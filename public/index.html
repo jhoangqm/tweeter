@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <!-- Meta Information -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
@@ -30,10 +33,10 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span class="logo">tweeter</span>
+      <span class="logo">tweeter <i class="fa-brands fa-twitter-square"></i></i></span>
       <div class="new-tweet">
         <span><strong>Write</strong> a new tweet</span>
-        <i class="fa-solid fa-angles-down arrow"></i>
+        <i class="fa-regular fa-pen-to-square"></i>
       </div>
     </nav>
     <!-- Page-specific (main) content here -->
@@ -43,18 +46,31 @@
       </div>
       <br>
       <div>
-          <h2>Jimbo</h2>
+          <h2 id="profile-name">Jimbo</h2>
       </div>
   </header>
+
     <main class="container">
-<h3>What are you humming about?</h3>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <label class="tweet-text">What are you humming about?</label>
+        <form action="/tweets/" method="POST">
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
-    
+          </div>
+        </form>
+      </section>
 
-     <h1>Lorem </h1>
-     <h2>Ipsum</h2>
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis mollitia aliquam non minus ipsum et dolorem molestias maxime harum, possimus exercitationem voluptates iusto qui modi quod quos distinctio beatae ducimus.</p>
+     <h1>Giveon </h1>
+     <h2>Like I want you</h2>
+     <p>Sometimes I wish you knew
+      but I disguise the truth.
+      I say I'm happy but I'm still stuck on us, mm-mm-mm.
+      Does your mind play this game too?
+      Think 'bout me and you.
+      I guess I'll just pretend until it all makes sense, hm-mm-hm, hmm-hmm.</p>
     </main>
   </body>
 </html>
