@@ -16,9 +16,15 @@
      <!-- Nav CSS -->
      <link rel="stylesheet" href="/styles/nav.css" type="text/css">
 
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <!-- External library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
+    
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
   </head>
@@ -26,9 +32,21 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span id="logo">tweeter</span>
+      <span class="logo">tweeter</span>
+      <div class="new-tweet">
+        <span><strong>Write</strong> a new tweet</span>
+        <i class="fa-solid fa-angles-down arrow"></i>
+      </div>
     </nav>
-
+    <header>
+      <div>
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div>
+          <h2>Jimbo</h2>
+      </div>
+  </header>
     <!-- Page-specific (main) content here -->
     <main class="container"></main>
   </body>
