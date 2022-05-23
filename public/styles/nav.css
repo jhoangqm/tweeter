@@ -1,13 +1,15 @@
 nav{
-background-color:#4056A1;
+background-color:#000000;
 color:#FFFFFF;
 height: 120px;
+width: 100vw;
 position: fixed;
-z-index: 500;
+z-index: 5;
 padding: 1.5em;
-right: 0;
+display: inline-flex;
 top: 0;
-left: 0;
+flex-direction: row;
+justify-content: space-between;
 }
 
 .new-tweet{
@@ -18,6 +20,7 @@ left: 0;
 
 .logo {
   font-family: 'Bungee', sans-serif;
+  font-size: 1.5em;
 }
 
 .arrow{

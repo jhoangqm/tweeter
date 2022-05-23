@@ -6,10 +6,12 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #0093b8;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
-}
+  background-color: #4056a1;
+  background-image: url("https://www.transparenttextures.com/patterns/darth-stripe.png");}
+
+
 
 header h2 {
   margin: 10px;
+
 }

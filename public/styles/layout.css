@@ -24,3 +24,13 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main {
+  margin: 0 auto;
+  width: 90%;
+  background-color: #f4f1ec;
+  display: inline-block;
+  justify-content: column;
+  align-items: center;
+
+}
