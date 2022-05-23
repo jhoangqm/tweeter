@@ -1,16 +1,17 @@
 let charLimit = 140;
 $(function () {
   // DOM LOADED SUCCESFULL
+
   $('.new-tweet form textarea').on('input', function () {
     $(this).val((i, value) => {
-      charLimit - value.length;
-      let theCounter = $(this).siblings('.counter');
+      charLimit = 140 - value.length;
+      const counter = $(this).siblings().find('.counter');
       if (charLimit < 0) {
-        theCounter.addClass('tweetTooLong');
+        counter.addClass('tweetTooLong');
       } else {
-        theCounter.removeClass('tweetTooLong');
+        counter.removeClass('tweetTooLong');
       }
-      theCounter.text(charLimit);
+      counter.text(charLimit);
       return value;
     });
   });
