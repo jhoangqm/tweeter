@@ -1,4 +1,5 @@
 let charLimit = 140;
+
 $(function () {
   // DOM LOADED SUCCESFULL
 
