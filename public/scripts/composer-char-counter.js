@@ -9,7 +9,7 @@ $(function () {
   $tweets.on('input', function () {
     $(this).val((i, value) => {
       charLimit = 140 - value.length;
-      const counter = $(this).siblings().find('.counter');
+      const counter = $(this).parent().find('.counter');
       if (charLimit < 0) {
         counter.addClass('tweetTooLong');
       } else {
