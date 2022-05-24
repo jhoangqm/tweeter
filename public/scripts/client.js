@@ -3,42 +3,6 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-// Test / driver code (temporary). Eventually will get this from the server.
-// const data = [
-//   {
-//     user: {
-//       name: 'Chamath Palihapithya',
-//       avatars: '/images/chamath.jpeg',
-//       handle: '@GSW_MajorShareHolder',
-//     },
-//     content: {
-//       text: '$SPCE, $CLOV. Invest in my tickers!',
-//     },
-//     created_at: 14611162327,
-//   },
-//   {
-//     user: {
-//       name: 'Newton',
-//       avatars: 'https://i.imgur.com/73hZDYK.png',
-//       handle: '@SirIsaac',
-//     },
-//     content: {
-//       text: 'If I have seen further it is by standing on the shoulders of giants',
-//     },
-//     created_at: 14611162327,
-//   },
-//   {
-//     user: {
-//       name: 'Descartes',
-//       avatars: 'https://i.imgur.com/nlhLi3I.png',
-//       handle: '@rd',
-//     },
-//     content: {
-//       text: 'Je pense , donc je suis',
-//     },
-//     created_at: 14611139588,
-//   },
-// ];
 
 $(function () {
   const createTweetElement = function (tweetObj) {
@@ -95,10 +59,13 @@ $(function () {
 
   // renderTweets(data);
 
-  $('#new-tweet-form').submit(function (event) {
+  const newTweetPost = function (event) {
     event.preventDefault();
     const $form = $(this);
     const tweeted = $form.serialize();
-    // $.ajax({ url: '/tweets/', method: 'POST', data: tweeted });
-  });
+    console.log(tweeted);
+    $.ajax({ url: '/tweets/', method: 'POST', data: tweeted });
+  };
+
+  $('#new-tweet-form').submit(newTweetPost);
 });
