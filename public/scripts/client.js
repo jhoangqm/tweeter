@@ -5,6 +5,14 @@
  */
 
 $(function () {
+  // show/hide the form when the icon is clicked in the nav
+  $('.new-tweet').hide();
+
+  $('nav div i').click(function () {
+    $('.new-tweet').slideToggle();
+    $('.tweet-text').focus();
+  });
+
   // function that creates new tweet
   const createTweetElement = function (tweetObj) {
     // Escape function to prevent cross site scripting
@@ -57,9 +65,13 @@ $(function () {
 
   // function that load tweets from db
   const loadTweets = function () {
-    $.ajax('/tweets', { method: 'GET' }).then(function (tweetDatas) {
-      renderTweets(tweetDatas);
-    });
+    $.ajax('/tweets', { method: 'GET' })
+      .then(function (tweetDatas) {
+        renderTweets(tweetDatas);
+      })
+      .catch(function (e) {
+        console.log(e);
+      });
   };
 
   // function that loads the latest tweet
@@ -72,25 +84,55 @@ $(function () {
   // function that takes in text checks validation if good it sends data to the server.
   const newTweetPost = function (event) {
     event.preventDefault();
-    const $form = $(this);
-    const tweeted = $form.serialize();
+    const tweeted = $(this).serialize();
     const counter = $('.counter');
-    if (tweeted.length > 145) {
-      alert('Characters exceeded');
+    const error = $('.error');
+    error.slideUp();
+    if (counter.hasClass('deepRed')) {
+      error.text('Character length exceeded');
     } else if (tweeted === 'text=') {
-      alert('Please enter a message');
+      error.text('Cannot post nothing');
+      error.slideDown();
     } else {
-      $.ajax({ url: '/tweets', method: 'POST', data: tweeted }).then(function (
-        req
-      ) {
-        loadLatestTweets();
-        counter.text(140);
-      });
+      $.ajax({ url: '/tweets', method: 'POST', data: tweeted })
+        .then(function (req) {
+          loadLatestTweets();
+          counter.text(140);
+        })
+        .catch(function (e) {
+          console.log(e);
+        });
+      $('#new-tweet-form').trigger('reset');
     }
   };
 
   //calls the newtweetpost function upon submitting
   $('#new-tweet-form').submit(newTweetPost);
+
+  $(window).scroll(function () {
+    const $upButton = $('.up-btn');
+    const $newTweetButton = $('.new-tweet-btn');
+
+    if ($(this).scrollTop()) {
+      $upButton.removeClass('hidden');
+    } else {
+      $upButton.addClass('hidden');
+    }
+
+    $upButton.on('click', function () {
+      $(window).scrollTop(0);
+      $('.new-tweet').slideDown();
+      $('#tweet-text').focus();
+      $(this).addClass('hidden');
+    });
+
+    //for navbar new tweet button
+    if ($upButton.hasClass('hidden')) {
+      $newTweetButton.removeClass('hidden');
+    } else {
+      $newTweetButton.addClass('hidden');
+    }
+  });
 
   loadTweets();
 });
