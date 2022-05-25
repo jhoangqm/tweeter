@@ -88,6 +88,7 @@ $(function () {
     error.slideUp();
     if (counter.hasClass('deepRed')) {
       error.text('⚠️  Your tweet is currently too long. ⚠️ ');
+      error.slideDown();
     } else if (tweeted === 'text=') {
       error.text('⚠️  All tweets must contain at least one character. ⚠️ ');
       error.slideDown();
