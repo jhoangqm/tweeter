@@ -19,6 +19,7 @@ body {
   flex-direction: column;
   justify-content: center;
   display: flex;
+  align-items: center;
 }
 
 
@@ -29,6 +30,35 @@ body {
   display: inline-block;
   justify-content: column;
   align-items: center;
+}
+
+.up-btn-container {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  background-color: transparent;
+  border: none;
+
+}
+
+.up-btn {
+  background-color: red;
+  color: #f4f1ec;
+  height: 4rem;
+  text-align: center;
+  width: 4rem;
+  border: none;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.up-btn i {
+  position: relative;
+  top: 0.7rem;
+}
+
+.up-btn:hover {
+  cursor: pointer;
 }
 
 section {
@@ -45,31 +75,4 @@ section {
   width: 100%;
 }
 
-.up-btn-container {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background-color: transparent;
-  border: none;
 
-}
-
-.up-btn {
-  width: 4rem;
-  height: 4rem;
-  border-radius: 50%;
-  border: none;
-  background-color: rgb(233, 60, 60);
-  color: #f4f1ec;
-  padding: 1rem;
-  text-align: center;
-}
-
-.up-btn i {
-  position: relative;
-  top: 0.7rem;
-}
-
-.up-btn:hover {
-  cursor: pointer;
-}

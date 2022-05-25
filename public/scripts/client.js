@@ -5,12 +5,35 @@
  */
 
 $(function () {
-  // show/hide the form when the icon is clicked in the nav
   $('.new-tweet').hide();
-
-  $('nav div i').click(function () {
+  $('nav div i').on('click', () => {
     $('.new-tweet').slideToggle();
-    $('.tweet-text').focus();
+    $('#tweet-text').focus();
+  });
+
+  $(window).scroll(function () {
+    const $upButton = $('.up-btn');
+    const $newTweetButton = $('.new-tweet-btn');
+
+    if ($(this).scrollTop()) {
+      $upButton.removeClass('hidden');
+    } else {
+      $upButton.addClass('hidden');
+    }
+
+    $upButton.on('click', function () {
+      $(window).scrollTop(0);
+      $('.new-tweet').slideDown();
+      $('#tweet-text').focus();
+      $(this).addClass('hidden');
+    });
+
+    //for navbar new tweet button
+    if ($upButton.hasClass('hidden')) {
+      $newTweetButton.removeClass('hidden');
+    } else {
+      $newTweetButton.addClass('hidden');
+    }
   });
 
   // function that creates new tweet
@@ -108,31 +131,6 @@ $(function () {
 
   //calls the newtweetpost function upon submitting
   $('#new-tweet-form').submit(newTweetPost);
-
-  $(window).scroll(function () {
-    const $upButton = $('.up-btn');
-    const $newTweetButton = $('.new-tweet-btn');
-
-    if ($(this).scrollTop()) {
-      $upButton.removeClass('hidden');
-    } else {
-      $upButton.addClass('hidden');
-    }
-
-    $upButton.on('click', function () {
-      $(window).scrollTop(0);
-      $('.new-tweet').slideDown();
-      $('#tweet-text').focus();
-      $(this).addClass('hidden');
-    });
-
-    //for navbar new tweet button
-    if ($upButton.hasClass('hidden')) {
-      $newTweetButton.removeClass('hidden');
-    } else {
-      $newTweetButton.addClass('hidden');
-    }
-  });
 
   loadTweets();
 });
