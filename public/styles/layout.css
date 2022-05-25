@@ -35,3 +35,41 @@ section {
   margin-bottom: 50px;
 }
 
+.hidden {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.up-btn-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: transparent;
+  border: none;
+
+}
+
+.up-btn {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: none;
+  background-color: rgb(233, 60, 60);
+  color: #f4f1ec;
+  padding: 1rem;
+  text-align: center;
+}
+
+.up-btn i {
+  position: relative;
+  top: 0.7rem;
+}
+
+.up-btn:hover {
+  cursor: pointer;
+}

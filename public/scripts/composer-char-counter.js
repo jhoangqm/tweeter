@@ -11,9 +11,9 @@ $(function () {
       charLimit = 140 - value.length;
       const counter = $(this).parent().find('.counter');
       if (charLimit < 0) {
-        counter.addClass('tweetTooLong');
+        counter.addClass('deepRed');
       } else {
-        counter.removeClass('tweetTooLong');
+        counter.removeClass('deepRed');
       }
       counter.text(charLimit);
       return value;

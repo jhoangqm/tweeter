@@ -39,9 +39,9 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span class="logo">tweeter <i class="fa-brands fa-twitter-square"></i></i></span>
-      <div class="new-tweet">
+      <div class="new-tweet-btn">
         <span><strong>Write</strong> a new tweet</span>
-        <i class="fa-regular fa-pen-to-square"></i>
+        <i class="fa-regular fa-pen-to-square deepRed"></i>
       </div>
     </nav>
     <!-- Page-specific (main) content here -->
@@ -56,10 +56,10 @@
   </header>
 
     <main class="container">
-      <section class="new-tweet">
+      <section class="new-tweet hidden">
         <h2>Compose Tweet</h2>
         <label class="tweet-text">Paper or Diamond Hands?</label>
-
+        <h5 class="error red hidden"></h5>
         <form action="/tweets/" method="POST" id="new-tweet-form">
           <textarea name="text" id="tweet-text" placeholder="Input your tweet here"></textarea>
           <div>
@@ -70,6 +70,8 @@
       </section>
       <section class="tweets">
       </section>
+      <div class="up-btn-container"> 
+        <div class="up-btn hidden"><i class="fa-solid fa-angles-up"></i></div>
     </main>
   </body>
 </html>
