@@ -5,9 +5,18 @@
  */
 
 $(function () {
+  // function that creates new tweet
   const createTweetElement = function (tweetObj) {
+    // Escape function to prevent cross site scripting
+    const escape = function (string) {
+      let div = document.createElement('div');
+      div.appendChild(document.createTextNode(string));
+      return div.innerHTML;
+    };
+
     const $newTweet = $('<article>').addClass('tweet');
 
+    // HTML template
     const innerHTML = `
           <header>
             <div class="profile">
@@ -19,7 +28,7 @@ $(function () {
             </div>
           </header>
           <h5 class="tweet-text">
-            ${tweetObj.content.text}
+            ${escape(tweetObj.content.text)}
           </h5>
           <hr>
           <footer>
@@ -38,7 +47,7 @@ $(function () {
     const newTweet = $newTweet.append(innerHTML);
     return newTweet;
   };
-
+  // function that render the created tweets from db
   const renderTweets = function (tweetDatas) {
     for (const tweet of tweetDatas) {
       const $tweet = createTweetElement(tweet);
@@ -46,31 +55,42 @@ $(function () {
     }
   };
 
-  // renderTweets(data);
-
+  // function that load tweets from db
   const loadTweets = function () {
     $.ajax('/tweets', { method: 'GET' }).then(function (tweetDatas) {
       renderTweets(tweetDatas);
     });
   };
 
-  loadTweets();
+  // function that loads the latest tweet
+  const loadLatestTweets = function () {
+    $.ajax('/tweets', { method: 'GET' }).then(function (tweetDatas) {
+      renderTweets([tweetDatas[tweetDatas.length - 1]]);
+    });
+  };
 
+  // function that takes in text checks validation if good it sends data to the server.
   const newTweetPost = function (event) {
     event.preventDefault();
     const $form = $(this);
     const tweeted = $form.serialize();
+    const counter = $('.counter');
     if (tweeted.length > 145) {
       alert('Characters exceeded');
     } else if (tweeted === 'text=') {
       alert('Please enter a message');
     } else {
-      $.ajax({ url: '/tweets/', method: 'POST', data: tweeted })
-        .then(function (req) {
-          loadTweets();
-        })
-        .then(function (req) {});
+      $.ajax({ url: '/tweets', method: 'POST', data: tweeted }).then(function (
+        req
+      ) {
+        loadLatestTweets();
+        counter.text(140);
+      });
     }
   };
+
+  //calls the newtweetpost function upon submitting
   $('#new-tweet-form').submit(newTweetPost);
+
+  loadTweets();
 });
