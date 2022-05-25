@@ -11,31 +11,6 @@ $(function () {
     $('#tweet-text').focus();
   });
 
-  $(window).scroll(function () {
-    const $upButton = $('.up-btn');
-    const $newTweetButton = $('.new-tweet-btn');
-
-    if ($(this).scrollTop()) {
-      $upButton.removeClass('hidden');
-    } else {
-      $upButton.addClass('hidden');
-    }
-
-    $upButton.on('click', function () {
-      $(window).scrollTop(0);
-      $('.new-tweet').slideDown();
-      $('#tweet-text').focus();
-      $(this).addClass('hidden');
-    });
-
-    //for navbar new tweet button
-    if ($upButton.hasClass('hidden')) {
-      $newTweetButton.removeClass('hidden');
-    } else {
-      $newTweetButton.addClass('hidden');
-    }
-  });
-
   // function that creates new tweet
   const createTweetElement = function (tweetObj) {
     // Escape function to prevent cross site scripting
@@ -112,9 +87,9 @@ $(function () {
     const error = $('.error');
     error.slideUp();
     if (counter.hasClass('deepRed')) {
-      error.text('Character length exceeded');
+      error.text('⚠️  Your tweet is currently too long. ⚠️ ');
     } else if (tweeted === 'text=') {
-      error.text('Cannot post nothing');
+      error.text('⚠️  All tweets must contain at least one character. ⚠️ ');
       error.slideDown();
     } else {
       $.ajax({ url: '/tweets', method: 'POST', data: tweeted })

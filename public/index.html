@@ -29,7 +29,8 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-   
+    <script type="text/javascript" src="/scripts/composer.js"></script>
+
   </head>
   <body>
     <!-- Top nav bar (fixed) -->
@@ -54,6 +55,7 @@
       <section class="new-tweet hidden">
         <h2>Compose Tweet</h2>
         <label class="tweet-text">Paper or Diamond Hands?</label>
+        <h5 class="error deepRed hidden"></h5>
         <form action="/tweets/" method="POST" id="new-tweet-form">
           <textarea name="text" id="tweet-text" placeholder="Input your tweet here"></textarea>
           <div class="new-tweet-bar">
@@ -65,7 +67,7 @@
       <section class="tweets">
       </section>
       <div class="up-btn-container"> 
-        <div class="up-btn hidden"><i class="fa-solid fa-angles-up"></i></div>
+        <div class="up-btn hidden"><i class="fa-solid fa-arrow-up-long"></i></div>
     </main>
   </body>
 </html>
