@@ -7,7 +7,6 @@
 $(function () {
   const createTweetElement = function (tweetObj) {
     const $newTweet = $('<article>').addClass('tweet');
-    const day = tweetDate(tweetObj['created_at']);
 
     const innerHTML = `
           <header>
@@ -25,7 +24,7 @@ $(function () {
           <hr>
           <footer>
             <div class="date">
-              <p><strong>${day} days ago </strong></p>
+              <p><strong>${timeago.format(tweetObj.created_at)}</strong></p>
             </div>
             <div class="icons">
               <i class="fa-solid fa-flag fa-2xs"></i>
@@ -40,31 +39,34 @@ $(function () {
     return newTweet;
   };
 
-  const tweetDate = function (tweetTime) {
-    const currentDateTime = new Date().getTime();
-    const milliseconds = 86400000000;
-
-    const timeDifference = currentDateTime - tweetTime;
-    const dayDifference = timeDifference / milliseconds;
-
-    return Math.floor(dayDifference);
-  };
-
   const renderTweets = function (tweetDatas) {
     for (const tweet of tweetDatas) {
       const $tweet = createTweetElement(tweet);
-      $('.tweets').append($tweet);
+      $('.tweets').prepend($tweet);
     }
   };
 
   // renderTweets(data);
+
+  const loadTweets = function () {
+    $.ajax('/tweets', { method: 'GET' }).then(function (tweetDatas) {
+      renderTweets(tweetDatas);
+    });
+  };
+
+  loadTweets();
 
   const newTweetPost = function (event) {
     event.preventDefault();
     const $form = $(this);
     const tweeted = $form.serialize();
     console.log(tweeted);
-    $.ajax({ url: '/tweets/', method: 'POST', data: tweeted });
+
+    $.ajax({ url: '/tweets/', method: 'POST', data: tweeted }).then(function (
+      req
+    ) {
+      console.log(req);
+    });
   };
 
   $('#new-tweet-form').submit(newTweetPost);
