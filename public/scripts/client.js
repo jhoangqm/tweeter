@@ -61,13 +61,17 @@ $(function () {
     const $form = $(this);
     const tweeted = $form.serialize();
     console.log(tweeted);
-
-    $.ajax({ url: '/tweets/', method: 'POST', data: tweeted }).then(function (
-      req
-    ) {
-      console.log(req);
-    });
+    if (tweeted.length > 141) {
+      alert('Characters exceeded');
+    } else if (tweeted === 'text=') {
+      alert('Please enter a message');
+    } else {
+      $.ajax({ url: '/tweets/', method: 'POST', data: tweeted }).then(function (
+        req
+      ) {
+        console.log(req);
+      });
+    }
   };
-
   $('#new-tweet-form').submit(newTweetPost);
 });
