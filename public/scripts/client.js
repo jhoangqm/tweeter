@@ -60,7 +60,6 @@ $(function () {
     event.preventDefault();
     const $form = $(this);
     const tweeted = $form.serialize();
-    console.log(tweeted);
     if (tweeted.length > 141) {
       alert('Characters exceeded');
     } else if (tweeted === 'text=') {
@@ -69,7 +68,9 @@ $(function () {
       $.ajax({ url: '/tweets/', method: 'POST', data: tweeted }).then(function (
         req
       ) {
-        console.log(req);
+        setTimeout(function () {
+          location.reload(req);
+        }, 0);
       });
     }
   };
