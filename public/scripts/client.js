@@ -60,18 +60,16 @@ $(function () {
     event.preventDefault();
     const $form = $(this);
     const tweeted = $form.serialize();
-    if (tweeted.length > 141) {
+    if (tweeted.length > 145) {
       alert('Characters exceeded');
     } else if (tweeted === 'text=') {
       alert('Please enter a message');
     } else {
-      $.ajax({ url: '/tweets/', method: 'POST', data: tweeted }).then(function (
-        req
-      ) {
-        setTimeout(function () {
-          location.reload(req);
-        }, 0);
-      });
+      $.ajax({ url: '/tweets/', method: 'POST', data: tweeted })
+        .then(function (req) {
+          loadTweets();
+        })
+        .then(function (req) {});
     }
   };
   $('#new-tweet-form').submit(newTweetPost);
