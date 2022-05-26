@@ -21,7 +21,7 @@
   width: 100%;
   outline: 0 none;
   border-style: none;
-  border-bottom: 2px solid #545149;
+  border-bottom: 0.5rem solid #545149;
   resize: none;
   font-size: 0.8em;
   font-weight: bold;
@@ -60,4 +60,25 @@
   text-align: center;
   padding: 0.5rem;
   margin: 0.5rem;
+}
+
+@media only screen and (min-width: 768px){
+  .container {
+    margin-top: 10%;
+    flex-direction: row;
+    display: flex;
+    width: 100vw;
+  }
+
+  .page {
+    margin-top: 24px;
+    margin-left: 50px;
+    width: 50vw;
+    padding-top: 10;
+
+  }
+
+  main {
+    width: 65%;
+  }
 }

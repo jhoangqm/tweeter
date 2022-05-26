@@ -18,6 +18,12 @@ nav div {
   align-items: center;
 }
 
+nav div i {
+  animation-name: bounce;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
 .new-tweet{
   display: flex;
   flex-direction: column;
@@ -33,3 +39,19 @@ nav div {
   color: red
 }
 
+@keyframes bounce {
+  from {
+    padding: 0px;
+  }
+  to {
+    padding: 10px;
+  }
+}
+
+
+@media only screen and (min-width: 768px){
+  nav {
+    background-color: #0096C7;
+    color: #FFFFFF;
+  }
+}

@@ -1,19 +1,21 @@
-body > header {
+.page {
   height: 400px;
-  width: 100vw;
-  margin-top: 120px;
+  width: 100%;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 6rem;
+  box-sizing: content-box;
   background-color: #d1d1d1;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png"); 
 }
 
 
 
-header h2 {
-  margin: 10px;
+body > header h2 {
+  margin: 1rem;
 
 }
 

@@ -42,7 +42,8 @@
       </div>
     </nav>
     <!-- Page-specific (main) content here -->
-    <header>
+    <div class="container">
+    <header class="page">
       <div>
           <img src="/images/jimcramerclean.png"> 
       </div>
@@ -53,11 +54,10 @@
   </header>
     <main>
       <section class="new-tweet hidden">
-        <h2>Compose Tweet</h2>
-        <label class="tweet-text">Paper or Diamond Hands?</label>
+        <label class="tweet-text"></label>
         <h5 class="error deepRed hidden"></h5>
         <form action="/tweets/" method="POST" id="new-tweet-form">
-          <textarea name="text" id="tweet-text" placeholder="Input your tweet here"></textarea>
+          <textarea name="text" id="tweet-text" placeholder="Paper or Diamond Hands?"></textarea>
           <div class="new-tweet-bar">
             <button type="submit" class="tweet-button">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -69,5 +69,6 @@
       <div class="up-btn-container"> 
         <div class="up-btn hidden"><i class="fa-solid fa-arrow-up-long"></i></div>
     </main>
+  </div>
   </body>
 </html>
