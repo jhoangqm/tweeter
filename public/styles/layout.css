@@ -19,7 +19,7 @@ body {
   flex-direction: column;
   justify-content: center;
   display: flex;
-  align-items: center;
+  align-items: stretch;
 }
 
 

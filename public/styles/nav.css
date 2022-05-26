@@ -1,5 +1,5 @@
 nav{
-background-color:#0096C7;
+background-color:transparent;
 color:#FFFFFF;
 height: 120px;
 width: 100vw;
@@ -48,10 +48,11 @@ nav div i {
   }
 }
 
-
-@media only screen and (min-width: 768px){
+@media only screen and (min-width: 1024px){
   nav {
     background-color: #0096C7;
     color: #FFFFFF;
   }
+  
+  
 }
