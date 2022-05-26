@@ -1,15 +1,15 @@
-nav {
-  background-color: transparent;
-  color: #FFFFFF;
-  height: 120px;
-  width: 100vw;
-  position: fixed;
-  z-index: 5;
-  padding: 1.5em;
-  display: inline-flex;
-  top: 0;
-  flex-direction: row;
-  justify-content: space-between;
+nav{
+background-color:transparent;
+color:#FFFFFF;
+height: 120px;
+width: 100vw;
+position: fixed;
+z-index: 5;
+padding: 1.5em;
+display: inline-flex;
+top: 0;
+flex-direction: row;
+justify-content: space-between;
 }
 
 nav div {
@@ -24,19 +24,19 @@ nav div i {
   animation-iteration-count: infinite;
 }
 
-.new-tweet {
+.new-tweet{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .logo {
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
   font-size: 1.5em;
 }
 
-.arrow {
-  color: red;
+.arrow{
+  color: red
 }
 
 @keyframes bounce {
@@ -47,10 +47,13 @@ nav div i {
     padding: 10px;
   }
 }
-@media (min-width: 1024px) {
+
+@media (min-width: 1024px){
   nav {
     background-color: #0096C7;
     color: #FFFFFF;
     width: 100%;
   }
+  
+  
 }

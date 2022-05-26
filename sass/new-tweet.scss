@@ -1,3 +1,4 @@
+
 .new-tweet {
   align-items: center;
   display: flex;
@@ -6,12 +7,14 @@
 
 .new-tweet form {
   width: 80%;
+  
 }
 
 .new-tweet h3 {
   margin-bottom: 0;
   color: #95918a;
 }
+
 
 #tweet-text {
   background: transparent;
@@ -22,9 +25,10 @@
   resize: none;
   font-size: 0.8em;
   font-weight: bold;
+  
 }
 
-.tweet-text {
+.tweet-text{
   font-size: 1em;
 }
 
@@ -36,24 +40,24 @@
 }
 
 .counter {
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
   color: #545149;
   border-top: 10px;
   float: right;
 }
 
 .tweet-button {
-  font-family: "Bungee", sans-serif;
+  font-family: 'Bungee', sans-serif;
   background-color: #0096C7;
-  color: #FFFFFF;
+  color:#FFFFFF
 }
 
-.tweet-button:hover {
+.tweet-button:hover{
   box-shadow: 5px 5px 0 #C8C8C8;
 }
 
 .deepRed {
-  color: red;
+  color: red
 }
 
 .error {
@@ -63,7 +67,8 @@
   margin: 0.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1024px){
+  
   .container {
     margin-top: 15%;
     flex-direction: row;
@@ -76,6 +81,7 @@
     margin-left: 50px;
     width: 50vw;
     padding-top: 10;
+
   }
 
   main {
