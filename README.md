@@ -24,6 +24,8 @@ _Main page, sized for desktop, with the new tweet form visible, and with an erro
 
 !["Screenshot of main page with invalid tweet length error message"](https://github.com/jhoangqm/tweeter/blob/main/docs/textValidationTooLong.png?raw=true)
 
+_Missing screenshots of animated buttons and back to the top button_
+
 _For a more in depth look at Tweeter, and to post your own Tweets, I encourage you to give it a try!_
 
 ## Getting Started
@@ -38,8 +40,6 @@ _For a more in depth look at Tweeter, and to post your own Tweets, I encourage y
 - Node.js
 - Express
 - EJS
-- bcrypt
-- body-parser
-- cookie-session
+- timeago.js
 
 #### Enjoy!
