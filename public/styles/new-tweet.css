@@ -62,10 +62,10 @@
   margin: 0.5rem;
 }
 
-@media only screen and (min-width: 1024px){
+@media (min-width: 1024px){
   
   .container {
-    margin-top: 10%;
+    margin-top: 15%;
     flex-direction: row;
     display: flex;
     width: 100vw;

@@ -40,6 +40,7 @@ _For a more in depth look at Tweeter, and to post your own Tweets, I encourage y
 - Node.js
 - Express
 - EJS
-- timeago.js
+- Chance
+- body-parser
 
 #### Enjoy!

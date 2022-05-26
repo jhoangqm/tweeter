@@ -48,7 +48,7 @@ nav div i {
   }
 }
 
-@media only screen and (min-width: 1024px){
+@media (min-width: 1024px){
   nav {
     background-color: #0096C7;
     color: #FFFFFF;
