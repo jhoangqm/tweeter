@@ -5,6 +5,7 @@
  */
 
 $(function () {
+  // show and hide button
   $('.new-tweet').hide();
   $('nav div i').on('click', () => {
     $('.new-tweet').slideToggle();

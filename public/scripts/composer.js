@@ -1,3 +1,5 @@
+// scroll up button
+
 $(function () {
   $(window).scroll(function () {
     const $upBtn = $('.up-btn');
